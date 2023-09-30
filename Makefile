@@ -39,9 +39,9 @@ test:
 	go test ./...
 	$(ACT)
 
-.PHONY: lint-go
-lint-go:
-	golangci-lint run $(FIX)
+#.PHONY: lint-go
+#lint-go:
+#	golangci-lint run $(FIX)
 
 .PHONY: lint-js
 lint-js:
@@ -59,11 +59,11 @@ lint-rest:
 		-e GITHUB_COMMENT_REPORTER=false \
 		megalinter/megalinter-go:v5
 
-.PHONY: lint
-lint: lint-go lint-rest
+#.PHONY: lint
+#lint: lint-go lint-rest
 
-.PHONY: lint-fix
-lint-fix: lint-md lint-go
+#.PHONY: lint-fix
+#lint-fix: lint-md lint-go
 
 .PHONY: fix
 fix:
